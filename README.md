@@ -29,7 +29,7 @@ Leveraging a large-scale **Monte Carlo Framework** (10⁴ simulations per model)
 
 | Model Strategy / Risk Profile | Ruin Probability (\(P_{\text{ruin}}\)) | Mean Final Capital (\(\mathbb{E}[U_T]\)) | 95% Confidence Interval (\(\text{VaR}_{97.5\%}\)) |
 | :--- | :---: | :---: | :---: |
-| **Pure Arithmetic BM** (μ=0, T=100) | *[.3074]* | *[10.0619]* | *[[0,	295549]]* |
+| **Pure Arithmetic BM** (μ=0, T=100) | *[0.3074]* | *[10.0619]* | *[[0,	295549]]* |
 | **General Arithmetic BM** (μ=-50, σ=5000, T=1) | *[0.0414]* | *[9951.9]* | *[0, 19655]* |
 | **Geometric BM (Itô)** (μ=-0.05, σ=1.20, T=1) | *[0.0071]* | *[9710.3]* | *[431, 48474]* |
 
