@@ -9,7 +9,7 @@ This repository contains advanced numerical simulation models developed entirely
 ### 1. Standard Arithmetic Brownian Motion (Ruin Theory Foundations)
 *   **SDE Architecture:** Simulates baseline capital paths driven purely by stochastic shocks with zero drift (μ = 0):
     $$\[dU_t = \sigma dW_t\]$$
-*   **Absorbing Barrier Logic:** Implements custom event loops that immediately halt the trajectory ($\(U_t = 0\)$) upon hitting the zero-capital threshold, avoiding artificial financial recoveries.
+*   **Absorbing Barrier Logic:** Implements custom event loops that immediately halt the trajectory ($U_t = 0$) upon hitting the zero-capital threshold, avoiding artificial financial recoveries.
 
 ### 2. General Arithmetic Brownian Motion (Linear Solvency Risk)
 *   **SDE Architecture:** Models a continuous linear risk process where the capital surplus balances a constant drift (premium income net of claims) and a massive claims volatility parameter:
@@ -19,7 +19,7 @@ This repository contains advanced numerical simulation models developed entirely
 ### 3. Geometric Brownian Motion & Itô Calculus (Non-Linear Solvency)
 *   **SDE Architecture:** Implements the classic multiplicative asset price model by applying **Itô's Lemma** to solve the non-linear SDE framework used in derivative pricing and Solvency II validation:
     $$\[dU_t = \mu U_t dt + \sigma U_t dW_t \implies U_t = U_0 \exp\left(\left(\mu - \frac{1}{2}\sigma^2\right)t + \sigma W_t\right)\]$$
-*   **Regulatory Threshold Constraints:** Integrates an early-warning solvency barrier ($\(U_t \le 200\)$) to simulate compliance breaches before complete depletion.
+*   **Regulatory Threshold Constraints:** Integrates an early-warning solvency barrier $(U_t \le 200)$ to simulate compliance breaches before complete depletion.
 
 ---
 
