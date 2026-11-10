@@ -32,10 +32,17 @@ Leveraging a large-scale **Monte Carlo Framework** (10⁴ simulations per model)
 | **Pure Arithmetic BM** (μ=0, T=100) | *[0.3074]* | *[10.0619]* | *[0,	295549]* |
 | **General Arithmetic BM** (μ=-50, σ=5000, T=1) | *[0.0414]* | *[9951.9]* | *[0, 19655]* |
 | **Geometric BM (Itô)** (μ=-0.05, σ=1.20, T=1) | *[0.0071]* | *[9710.3]* | *[431, 48474]* |
+---
 
-### 📈 Core Risk Insights:
-*   **Discrete Sampling Bias:** The models account for discrete daily steps (dt = 1/365), establishing a robust baseline for stress-testing financial reserves.
-*   **Tail-Risk Distribution:** The empirical probability density function (PDF) generated via final-step histograms reveals highly skewed distributions under non-linear geometric assumptions, proving the impact of volatility drag $(-\frac{1}{2}\sigma^2$) on capital survival.
+## 📐 Advanced Numerical Integration & Monte Carlo Frameworks
+
+Beyond stochastic asset path modeling, this repository implements diverse multi-dimensional numerical integration methodologies to optimize error convergence and solve complex mathematical structures.
+
+### 🔬 Implemented Methodologies:
+*   **Standard Multidimensional Monte Carlo ($MCID$):** Uniformly distributed pseudo-random point generation ($n = 10⁷$) over multi-dimensional domains $[a,b] \times [c,d]$ to estimate double integrals.
+*   **Grid-Based Monte Carlo $(MC\_{malla})$:** A hybrid approach leveraging a rectangular mesh grid and the **Compound Midpoint Rule** via matrix vectorization (`meshgrid`), reducing statistical variance.
+*   **Domain-Constrained Acceptance-Rejection Monte Carlo $(MCID\_{triangulo})$:** Algorithmic execution of random sampling restricted to triangular geometries $(y ≤ 2 - x)$, dynamically computing domain adjustments via accepted-to-rejected trajectory proportions.
+*   **Univariate Monte Carlo Integrator ($MCIS$):** Uniform stochastic sampling framework designed to approximate single-variable definitive integrals over finite continuous intervals $[a, b]$.
 
 ---
 
@@ -44,5 +51,9 @@ Leveraging a large-scale **Monte Carlo Framework** (10⁴ simulations per model)
 └── matlab/
     ├── arithmetic_bm_pure.m       # Baseline Brownian Motion with zero drift
     ├── arithmetic_bm_general.m    # Linear drift & volatility risk model
-    └── geometric_bm_ito.m         # Multiplicative Itô calculus & Solvency II barrier
+    ├── geometric_bm_ito.m         # Multiplicative Itô calculus & Solvency II barrier
+    ├── MCID.m                     # Pure multidimensional Monte Carlo sampler
+    ├── MC_malla.m                 # Grid-based Compound Midpoint matrix engine
+    ├── MCID_triangulo.m           # Geometric acceptance-rejection integration loop
+    └── MCIS.m                     # Standard univariate Monte Carlo estimator
 ```
