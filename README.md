@@ -27,15 +27,15 @@ This repository contains advanced numerical simulation models developed entirely
 
 Leveraging a large-scale **Monte Carlo Framework** (10⁴ simulations per model) under a seed-controlled environment (`rng(1234)`), the empirical execution yielded the following data architecture:
 
-| Model Strategy / Risk Profile | Ruin Probability (\(P_{\text{ruin}}\)) | Mean Final Capital (\(\mathbb{E}[U_T]\)) | 95% Confidence Interval (\(\text{VaR}_{97.5\%}\)) |
+| Model Strategy / Risk Profile | Ruin Probability $P_{\text{ruin}}$ | Mean Final Capital $\mathbb{E}[U_T]$ | 95% Confidence Interval $\text{VaR}_{0.975}$ | 
 | :--- | :---: | :---: | :---: |
-| **Pure Arithmetic BM** (μ=0, T=100) | *[0.3074]* | *[10.0619]* | *[[0,	295549]]* |
+| **Pure Arithmetic BM** (μ=0, T=100) | *[0.3074]* | *[10.0619]* | *[0,	295549]* |
 | **General Arithmetic BM** (μ=-50, σ=5000, T=1) | *[0.0414]* | *[9951.9]* | *[0, 19655]* |
 | **Geometric BM (Itô)** (μ=-0.05, σ=1.20, T=1) | *[0.0071]* | *[9710.3]* | *[431, 48474]* |
 
 ### 📈 Core Risk Insights:
 *   **Discrete Sampling Bias:** The models account for discrete daily steps (dt = 1/365), establishing a robust baseline for stress-testing financial reserves.
-*   **Tail-Risk Distribution:** The empirical probability density function (PDF) generated via final-step histograms reveals highly skewed distributions under non-linear geometric assumptions, proving the impact of volatility drag (\(-\frac{1}{2}\sigma^2\)) on capital survival.
+*   **Tail-Risk Distribution:** The empirical probability density function (PDF) generated via final-step histograms reveals highly skewed distributions under non-linear geometric assumptions, proving the impact of volatility drag $(-\frac{1}{2}\sigma^2$) on capital survival.
 
 ---
 
